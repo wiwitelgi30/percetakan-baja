@@ -14,16 +14,16 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href=<?= base_url('pelanggan/homepage');?>>Home</a>
+                            <a class="nav-link" href=<?= base_url('homepage');?>>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=<?= base_url('pelanggan/produk');?>>Produk</a>
+                            <a class="nav-link" href=<?= base_url('produk');?>>Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=<?= base_url('pelanggan/about');?>>About</a>
+                            <a class="nav-link" href=<?= base_url('about');?>>About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href=<?= base_url('pelanggan/contact');?>>Contact</a>
+                            <a class="nav-link" href=<?= base_url('contact');?>>Contact</a>
                         </li>
                     </ul>
                 </div>

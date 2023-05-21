@@ -7,9 +7,13 @@ class Produk extends CI_Controller {
     {
         $data = [
             'content'=>'pelanggan/produk',
+            'kategori_produk' => $this->db->select('*')
+                    ->get('kategori_produk')->result(),
             'produk' => $this->db->select('*')
                     ->from('produk as p')
                     ->join('kategori_produk as kp', 'kp.id_kategori_produk = p.id_kategori_produk')
+                    ->like('nama_produk', $this->input->get('search'), 'both')
+                    ->like('nama_kategori_produk', $this->input->get('kategori'), 'both')
                     ->get()->result(),
         ];
         $this->load->view('pelanggan/layouts/app', $data);

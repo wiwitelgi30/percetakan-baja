@@ -19,59 +19,79 @@
 
     <!-- Start Content -->
     <div class="container py-5">
-        <div class="row">
+        <form action="<?= base_url('produk') ?>" method="get">
+            <div class="row">
 
-            <div class="col-lg-3">
-                <h1 class="h2 pb-4">Kategori</h1>
-                <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Pakaian
-                        </a>
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            ATK
-                        </a>
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Lain-lain
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-md-6 pb-4">
-                        <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                                <option>Item</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <?php $no=1; foreach ($produk as $row): ?>
-                    
-                <?php endforeach; ?>
-                
-                <div div="row">
-                    <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                <div class="col-lg-3">
+                    <h1 class="h2 pb-4">Kategori</h1>
+                    <ul class="list-unstyled templatemo-accordion">
+                        <?php foreach ($kategori_produk as $row): ?>
+                        <li class="pb-3">
+                            <a onclick="this.form.submit()" name="kategori" value="<?= $row->nama_kategori_produk ?>" class="collapsed d-flex justify-content-between h3 text-decoration-none">
+                                <?= $row->nama_kategori_produk ?>
+                            </a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
-            </div>
+                
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-md-6 pb-4">
+                            <div class="d-flex">
+                                <input type="search" name="search" id="search" class="me-2 form-control" value="<?= $this->input->get('search') ?>" placeholder="Cari produk..." autocomplete="off">
+                                <button type="submit" class="btn btn-success">Cari</button>
+                            </div>
+                        </div>
+                    </div>
 
-        </div>
+                    <div class="mb-4">
+                        <small>
+                            Menampilkan 1 produk
+                            
+                            <?php if ($this->input->get('search')): ?>
+                                untuk "<b><?= $this->input->get('search') ?></b>"
+                            <?php endif; ?>
+
+                            <?php if ($this->input->get('kategori')): ?>
+                                dengan ketegori <?= $this->input->get('kategori') ?>
+                            <?php endif; ?>
+                        </small>
+                    </div>
+                    
+                    <div class="row">
+                        <?php foreach ($produk as $row): ?>
+                            <div class="col-md-4">
+                                <div class="card mb-4 product-wap rounded-0">
+                                    <div class="card rounded-0">
+                                        <img class="card-img rounded-0 img-fluid" src="<?= base_url('assets/uploads/') . $row->gambar ?>">
+                                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                            <ul class="list-unstyled">
+                                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i> Detail</a></li>
+                                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-plus"></i> Keranjang</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="shop-single.html" class="h3 text-decoration-none"><?= $row->nama_produk ?></a>
+                                        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                            <li class="pt-2">
+                                                <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                                <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                                <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                                <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                                <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                            </li>
+                                        </ul>
+                                        <p class="mb-0 fw-bold text-success">Rp <?= number_format($row->harga) ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <!-- End Content -->
 
