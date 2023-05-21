@@ -31,6 +31,16 @@ class Auth extends CI_Controller {
                 'id_role' => 1,
             ];
 
+            $userExists = $this->db
+                    ->where('email', $this->input->post('email'))
+                    ->where('no_hp', $this->input->post('no_hp'))
+                    ->get('users')->row();
+            
+            if ($userExists) {
+                $this->session->set_flashdata('error.daftar', 'Gagal mendaftar akun, email atau No. HP sudah terdaftar.');
+                redirect('homepage');
+            }
+
             if ($this->db->insert('users', $data)) {
                 $this->session->set_flashdata('success.daftar', 'Kamu berhasil mendaftar sebagai pelanggan, silahkan login melalui akun anda.');
                 redirect('homepage');
