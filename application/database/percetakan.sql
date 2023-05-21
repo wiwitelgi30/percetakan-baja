@@ -1,177 +1,111 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 07:51 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Database: `percetakan`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `detail_pesanan`
---
-
-CREATE TABLE `detail_pesanan` (
-  `id_detail_pesanan` int(11) NOT NULL,
-  `id_pesanan` varchar(7) NOT NULL,
-  `id_produk` varchar(5) NOT NULL,
-  `jumlah_produk` int(5) NOT NULL,
-  `catatan` text NOT NULL
+-- Dumping structure for table percetakan.detail_pesanan
+CREATE TABLE IF NOT EXISTS `detail_pesanan` (
+  `id_detail_pesanan` int NOT NULL AUTO_INCREMENT,
+  `id_pesanan` varchar(7) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_produk` varchar(5) COLLATE utf8mb4_general_ci NOT NULL,
+  `jumlah_produk` int NOT NULL,
+  `catatan` text COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_detail_pesanan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-- Dumping data for table percetakan.detail_pesanan: ~0 rows (approximately)
+DELETE FROM `detail_pesanan`;
 
---
--- Table structure for table `kategori_produk`
---
+-- Dumping structure for table percetakan.kategori_produk
+CREATE TABLE IF NOT EXISTS `kategori_produk` (
+  `id_kategori_produk` int NOT NULL AUTO_INCREMENT,
+  `nama_kategori_produk` varchar(25) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_kategori_produk`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `kategori_produk` (
-  `id_kategori_produk` int(11) NOT NULL,
-  `nama_kategori_produk` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `kategori_produk`
---
-
+-- Dumping data for table percetakan.kategori_produk: ~2 rows (approximately)
+DELETE FROM `kategori_produk`;
 INSERT INTO `kategori_produk` (`id_kategori_produk`, `nama_kategori_produk`) VALUES
-(1, 'Pakaiannn'),
-(4, 'atk');
+	(1, 'Pakaian'),
+	(4, 'ATK');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `pesanan`
---
-
-CREATE TABLE `pesanan` (
-  `id_pesanan` varchar(7) NOT NULL,
-  `id_user` int(11) NOT NULL,
+-- Dumping structure for table percetakan.pesanan
+CREATE TABLE IF NOT EXISTS `pesanan` (
+  `id_pesanan` varchar(7) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_user` int NOT NULL,
   `total_harga` decimal(10,0) NOT NULL,
   `bukti_bayar` blob NOT NULL,
-  `status_transaksi` enum('Belum Bayar','Sudah Bayar') NOT NULL,
-  `status_pesanan` enum('Dalam Proses','Selesai') NOT NULL
+  `status_transaksi` enum('Belum Bayar','Sudah Bayar') COLLATE utf8mb4_general_ci NOT NULL,
+  `status_pesanan` enum('Dalam Proses','Selesai') COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-- Dumping data for table percetakan.pesanan: ~0 rows (approximately)
+DELETE FROM `pesanan`;
 
---
--- Table structure for table `produk`
---
-
-CREATE TABLE `produk` (
-  `id_produk` char(5) NOT NULL,
-  `nama_produk` varchar(128) NOT NULL,
+-- Dumping structure for table percetakan.produk
+CREATE TABLE IF NOT EXISTS `produk` (
+  `id_produk` char(5) COLLATE utf8mb4_general_ci NOT NULL,
+  `nama_produk` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
   `gambar` blob NOT NULL,
-  `id_kategori_produk` int(11) NOT NULL,
-  `stok` int(5) NOT NULL,
+  `id_kategori_produk` int NOT NULL,
+  `stok` int NOT NULL,
   `harga` decimal(10,0) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `slug` varchar(255) NOT NULL
+  `deskripsi` text COLLATE utf8mb4_general_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_produk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `produk`
---
-
+-- Dumping data for table percetakan.produk: ~1 rows (approximately)
+DELETE FROM `produk`;
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `gambar`, `id_kategori_produk`, `stok`, `harga`, `deskripsi`, `slug`) VALUES
-('P2301', 'celana', 0x68616e642d7061696e7465642d6261636b67726f756e642d76696f6c65742d6f72616e67652d636f6c6f7572735f32332d32313438343237353738312e6a7067, 1, 50, '20000', '212121', '');
+	('P2301', 'Celana Panjang', _binary 0x68616e642d7061696e7465642d6261636b67726f756e642d76696f6c65742d6f72616e67652d636f6c6f7572735f32332d32313438343237353738312e6a7067, 1, 50, 20000, '212121', '');
 
--- --------------------------------------------------------
+-- Dumping structure for table percetakan.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id_role` int unsigned NOT NULL AUTO_INCREMENT,
+  `nama_role` varchar(25) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id_role`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Table structure for table `roles`
---
+-- Dumping data for table percetakan.roles: ~0 rows (approximately)
+DELETE FROM `roles`;
+INSERT INTO `roles` (`id_role`, `nama_role`) VALUES
+	(1, 'pelanggan'),
+	(2, 'admin');
 
-CREATE TABLE `roles` (
-  `id_role` int(1) NOT NULL,
-  `nama_role` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- Dumping structure for table percetakan.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id_user` int unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` text COLLATE utf8mb4_general_ci NOT NULL,
+  `no_hp` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(128) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `foto` blob,
+  `id_role` int NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-- Dumping data for table percetakan.users: ~2 rows (approximately)
+DELETE FROM `users`;
+INSERT INTO `users` (`id_user`, `nama`, `alamat`, `no_hp`, `email`, `password`, `foto`, `id_role`) VALUES
+	(1, 'Asepso', 'Jl. Apel 212', '081345678910', 'user@gmail.com', '$2y$10$UacekmPlKtAtJJLYxTYIYORn5Vu3TlQxTE1Amm9hbI3GDpUlhUiBG', NULL, 1),
+	(2, 'John', 'Jl. Apel 212', '081345678910', 'admin@gmail.com', '$2y$10$UacekmPlKtAtJJLYxTYIYORn5Vu3TlQxTE1Amm9hbI3GDpUlhUiBG', NULL, 2),
+	(4, 'Maulana Aprizqy Sumaryanto', 'asdasdasd', '081345678910', 'maulana4pz@gmail.com', '$2y$10$DdQfXB39Fvvr2nArWvw0t.5LE6vAkXNvTBKtwbFPNwX0iJ2LjqIBu', NULL, 1);
 
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
-  `nama` varchar(128) NOT NULL,
-  `alamat` text NOT NULL,
-  `no_hp` varchar(15) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `foto` blob DEFAULT NULL,
-  `id_role` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `detail_pesanan`
---
-ALTER TABLE `detail_pesanan`
-  ADD PRIMARY KEY (`id_detail_pesanan`);
-
---
--- Indexes for table `kategori_produk`
---
-ALTER TABLE `kategori_produk`
-  ADD PRIMARY KEY (`id_kategori_produk`);
-
---
--- Indexes for table `produk`
---
-ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id_produk`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `detail_pesanan`
---
-ALTER TABLE `detail_pesanan`
-  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `kategori_produk`
---
-ALTER TABLE `kategori_produk`
-  MODIFY `id_kategori_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

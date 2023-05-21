@@ -47,7 +47,7 @@
 
                     <div class="mb-4">
                         <small>
-                            Menampilkan 1 produk
+                            Menampilkan <?= count($produk) ?> produk
                             
                             <?php if ($this->input->get('search')): ?>
                                 untuk "<b><?= $this->input->get('search') ?></b>"
