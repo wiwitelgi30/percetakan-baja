@@ -3,6 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
     
+    public function __construct()
+    {
+        parent::__construct();
+
+        if ($this->session->userdata('role') != 'admin') {
+            header("HTTP/1.1 401 Unauthorized");
+            exit;
+        }
+    }
+
     public function index()
     {
         $data = [
