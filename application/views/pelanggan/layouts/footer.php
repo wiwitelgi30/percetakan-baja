@@ -29,7 +29,7 @@ $kategori_produk = $this->db->select('*')->get('kategori_produk')->result();
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Produk Kami</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <?php foreach ($kategori_produk as $kategori): ?>
-                        <li><a class="text-decoration-none" href="#"><?= $kategori->nama_kategori_produk ?></a></li>
+                        <li><a class="text-decoration-none" href="<?= base_url('/produk?kategori=') . $kategori->nama_kategori_produk ?>"><?= $kategori->nama_kategori_produk ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -39,7 +39,7 @@ $kategori_produk = $this->db->select('*')->get('kategori_produk')->result();
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="<?= base_url('/') ?>">Home</a></li>
                         <li><a class="text-decoration-none" href="<?= base_url('/produk') ?>">Produk</a></li>
-                        <li><a class="text-decoration-none" href="<?= base_url('/about') ?>">About Us</a></li>
+                        <li><a class="text-decoration-none" href="<?= base_url('/about') ?>">About</a></li>
                         <li><a class="text-decoration-none" href="<?= base_url('/contact') ?>">Contact</a></li>
                     </ul>
                 </div>
