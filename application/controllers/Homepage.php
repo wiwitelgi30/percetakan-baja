@@ -6,7 +6,8 @@ class Homepage extends CI_Controller {
     public function index()
     {
         $data = [
-            'content'=>'pelanggan/homepage'
+            'content'=>'pelanggan/homepage',
+            'kategori_produk' => $this->db->select('*')->get('kategori_produk')->result(),
         ];
         $this->load->view('pelanggan/layouts/app', $data);
     }

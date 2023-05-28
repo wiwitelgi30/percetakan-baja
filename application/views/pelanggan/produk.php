@@ -1,35 +1,16 @@
-<!-- Modal -->
-<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-
     <!-- Start Content -->
     <div class="container py-5">
         <form action="<?= base_url('produk') ?>" method="get">
             <div class="row">
 
                 <div class="col-lg-3">
-                    <h1 class="h2 pb-4">Kategori</h1>
-                    <ul class="list-unstyled templatemo-accordion">
+                    <h1 class="h2 pb-4 fw-normal">Kategori</h1>
+                    <ul class="list-styled templatemo-accordion">
                         <?php foreach ($kategori_produk as $row): ?>
-                        <li class="pb-3">
-                            <a onclick="this.form.submit()" name="kategori" value="<?= $row->nama_kategori_produk ?>" class="collapsed d-flex justify-content-between h3 text-decoration-none">
+                        <li>
+                            <button onclick="this.form.submit()" name="kategori" value="<?= $row->nama_kategori_produk ?>" class="btn collapsed d-flex justify-content-between h3 text-decoration-none">
                                 <?= $row->nama_kategori_produk ?>
-                            </a>
+                            </button>
                         </li>
                         <?php endforeach; ?>
                     </ul>
@@ -37,9 +18,9 @@
                 
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-md-6 pb-4">
+                        <div class="col-md-12 pb-4">
                             <div class="d-flex">
-                                <input type="search" name="search" id="search" class="me-2 form-control" value="<?= $this->input->get('search') ?>" placeholder="Cari produk..." autocomplete="off">
+                                <input type="search" name="search" id="search" class="me-2 form-control form-control-lg" value="<?= $this->input->get('search') ?>" placeholder="Cari produk..." autocomplete="off">
                                 <button type="submit" class="btn btn-success">Cari</button>
                             </div>
                         </div>
@@ -54,7 +35,7 @@
                             <?php endif; ?>
 
                             <?php if ($this->input->get('kategori')): ?>
-                                dengan ketegori <?= $this->input->get('kategori') ?>
+                                dengan kategori <b><?= $this->input->get('kategori') ?></b>
                             <?php endif; ?>
                         </small>
                     </div>
@@ -67,8 +48,8 @@
                                         <img class="card-img rounded-0 img-fluid" src="<?= base_url('assets/uploads/') . $row->gambar ?>">
                                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
-                                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i> Detail</a></li>
-                                                <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-plus"></i> Keranjang</a></li>
+                                                <li><a class="btn btn-success text-white mt-2" href="<?= base_url('/produk/detail/') . $row->slug ?>"><i class="far fa-eye"></i> Detail</a></li>
+                                                <li><a class="btn btn-success text-white mt-2" href="<?= base_url('/keranjang') ?>"><i class="fas fa-plus"></i> Keranjang</a></li>
                                             </ul>
                                         </div>
                                     </div>
