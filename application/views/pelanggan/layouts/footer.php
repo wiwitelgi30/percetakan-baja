@@ -1,3 +1,7 @@
+<?php
+$kategori_produk = $this->db->select('*')->get('kategori_produk')->result();
+?>
+
 <!-- Start Footer -->
 <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
@@ -24,13 +28,9 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Produk Kami</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        <?php foreach ($kategori_produk as $kategori): ?>
+                        <li><a class="text-decoration-none" href="#"><?= $kategori->nama_kategori_produk ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
