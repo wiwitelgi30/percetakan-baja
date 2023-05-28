@@ -18,4 +18,19 @@ class Produk extends CI_Controller {
         ];
         $this->load->view('pelanggan/layouts/app', $data);
     }
+
+    public function detail($slug)
+    {
+        $data = [
+            'content'=>'pelanggan/detail_produk',
+            'produk' => $this->db->select('*')
+                    ->from('produk as p')
+                    ->join('kategori_produk as kp', 'kp.id_kategori_produk = p.id_kategori_produk')
+                    ->like('nama_produk', $this->input->get('search'), 'both')
+                    ->like('nama_kategori_produk', $this->input->get('kategori'), 'both')
+                    ->where('produk.slug', $slug)
+                    ->get()->row(),
+        ];
+        $this->load->view('pelanggan/layouts/app', $data);
+    }
 }
