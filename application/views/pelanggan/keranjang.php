@@ -1,5 +1,6 @@
 <div class="container py-5">
     <h4>Keranjang Belanja</h4>
+    <div class="row">
         <table class="mt-4 table">
             <thead>
                 <tr>
@@ -50,7 +51,9 @@
             </tbody>
         </table>
 
-    <div class="text-end">
-        <a href="" class="btn btn-success">Checkout <i class="fas fa-arrow-right"></i></a>
+        <div class="d-flex justify-content-end align-items-center">
+            <b class="h5">Total Pesanan: Rp <?= number_format($total_pesanan,0,',','.') ?></b>
+            <a href="" class="ms-4 btn btn-success">Checkout <i class="fas fa-arrow-right"></i></a>
+        </div>
     </div>
 </div>

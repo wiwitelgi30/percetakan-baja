@@ -20,6 +20,10 @@ class Keranjang extends CI_Controller {
                     ->from('keranjang')
                     ->join('produk', 'produk.id_produk=keranjang.id_produk', 'left')
                     ->get()->result(),
+            'total_pesanan' => $this->db->select('SUM(jumlah_produk * produk.harga) as total')
+                    ->from('keranjang')
+                    ->join('produk', 'produk.id_produk=keranjang.id_produk', 'left')
+                    ->get()->row()->total,
         ];
 
         $this->load->view('pelanggan/layouts/app', $data);
