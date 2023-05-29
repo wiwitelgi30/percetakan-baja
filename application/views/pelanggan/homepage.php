@@ -37,14 +37,14 @@
                 <?php foreach ($produk as $row): ?>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a href="<?= base_url('/produk/detail/') . $row->slug ?>">
                             <img src="<?= base_url('assets/uploads/') .$row->gambar  ?>" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
                                 <li class="text-success text-right">Rp <?= number_format($row->harga,0,',','.') ?></li>
                             </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark"><?= $row->nama_produk ?></a>
+                            <a href="<?= base_url('/produk/detail/') . $row->slug ?>" class="h2 text-decoration-none text-dark"><?= $row->nama_produk ?></a>
                         </div>
                     </div>
                 </div>

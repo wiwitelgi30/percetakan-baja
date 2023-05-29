@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#" class="h3 text-decoration-none"><?= $row->nama_produk ?></a>
+                                    <a href="<?= base_url('/produk/detail/') . $row->slug ?>" class="h3 text-decoration-none"><?= $row->nama_produk ?></a>
                                     <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                         <li class="pt-2">
                                             <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
