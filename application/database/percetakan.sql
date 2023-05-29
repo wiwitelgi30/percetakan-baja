@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `detail_pesanan` (
   PRIMARY KEY (`id_detail_pesanan`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table percetakan.detail_pesanan: ~1 rows (approximately)
+-- Dumping data for table percetakan.detail_pesanan: ~3 rows (approximately)
 DELETE FROM `detail_pesanan`;
 INSERT INTO `detail_pesanan` (`id_detail_pesanan`, `id_pesanan`, `id_produk`, `jumlah_produk`, `catatan`) VALUES
 	(1, 'PS23001', 'P2301', 1, NULL),
@@ -38,11 +38,12 @@ CREATE TABLE IF NOT EXISTS `kategori_produk` (
   PRIMARY KEY (`id_kategori_produk`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table percetakan.kategori_produk: ~2 rows (approximately)
+-- Dumping data for table percetakan.kategori_produk: ~3 rows (approximately)
 DELETE FROM `kategori_produk`;
 INSERT INTO `kategori_produk` (`id_kategori_produk`, `nama_kategori_produk`) VALUES
 	(1, 'Pakaian'),
-	(4, 'ATK');
+	(4, 'ATK'),
+	(5, 'Lain-lain');
 
 -- Dumping structure for table percetakan.keranjang
 CREATE TABLE IF NOT EXISTS `keranjang` (
@@ -54,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `keranjang` (
   PRIMARY KEY (`id_keranjang`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table percetakan.keranjang: ~1 rows (approximately)
+-- Dumping data for table percetakan.keranjang: ~0 rows (approximately)
 DELETE FROM `keranjang`;
 
 -- Dumping structure for table percetakan.pesanan
@@ -66,10 +67,10 @@ CREATE TABLE IF NOT EXISTS `pesanan` (
   `status_pesanan` enum('Menunggu Pembayaran','Dalam Proses','Selesai') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'Menunggu Pembayaran'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table percetakan.pesanan: ~0 rows (approximately)
+-- Dumping data for table percetakan.pesanan: ~2 rows (approximately)
 DELETE FROM `pesanan`;
 INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `total_harga`, `bukti_bayar`, `status_pesanan`) VALUES
-	('PS23001', 1, 22000, NULL, 'Menunggu Pembayaran'),
+	('PS23001', 1, 22000, _binary 0x6c656d6261725f706572736574756a75616e5f504d4b2e6a7067, 'Selesai'),
 	('PS23002', 1, 20000, _binary 0x63726f707065645f6c656d6261725f706572736574756a75616e5f504d4b2e6a7067, 'Dalam Proses');
 
 -- Dumping structure for table percetakan.produk
@@ -85,10 +86,10 @@ CREATE TABLE IF NOT EXISTS `produk` (
   PRIMARY KEY (`id_produk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table percetakan.produk: ~1 rows (approximately)
+-- Dumping data for table percetakan.produk: ~2 rows (approximately)
 DELETE FROM `produk`;
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `gambar`, `id_kategori_produk`, `stok`, `harga`, `deskripsi`, `slug`) VALUES
-	('P2301', 'Celana Panjang', _binary 0x38636664396434663235663862626330303135656132333961376133316161352e6a7067, 4, 50, 20000, '212121', ''),
+	('P2301', 'Celana Panjang', _binary 0x38636664396434663235663862626330303135656132333961376133316161352e6a7067, 1, 50, 20000, '212121', ''),
 	('P2302', 'Pensil 2B', _binary 0x3131373130322d612e6a7067, 4, 99, 2000, 'Pensil 2B Merek Joyko', '');
 
 -- Dumping structure for table percetakan.roles
