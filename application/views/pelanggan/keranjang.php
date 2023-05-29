@@ -1,3 +1,14 @@
+<style>
+    .gambar-produk {
+        border-radius: 0.5rem;
+        max-height: 100px;
+    }
+
+    td {
+        /* vertical-align: middle; */
+    }
+</style>
+
 <div class="container py-5">
     <h4>Keranjang Belanja</h4>
     <div class="row">
@@ -15,17 +26,16 @@
                 <?php foreach ($keranjang as $produk): ?>
                 <tr>
                     <td>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="<?= base_url('assets/uploads/') . $produk->gambar ?>" class="img-fluid" width="75px" alt="Gambar Produk">
-                            </div>
-                            <div class="col-10">
-                                <?= $produk->nama_produk ?>
+                        <div class="d-flex">
+                            <img src="<?= base_url('assets/uploads/') . $produk->gambar ?>" class="gambar-produk img-fluid" alt="Gambar Produk">
+                            <div class="mx-2 fw-bolder">
+                                <h5><?= $produk->nama_produk ?></h5>
+                                <b class="text-success">Rp <?= number_format($produk->harga, 0,',','.') ?></b>
                             </div>
                         </div>
                     </td>
-                    <td>
-                        <form action="<?= base_url('/keranjang/ubah_keranjang') ?>" method="post">
+                    <td rowspan="2">
+                        <form action="<?= base_url('/keranjang/ubah_jumlah_produk') ?>" method="post">
                             <div class="row">
                                 <input type="hidden" name="id_keranjang" value="<?= $produk->id_keranjang ?>">
                                 <div class="col-3">
@@ -37,9 +47,17 @@
                             </div>
                         </form>
                     </td>
-                    <td>Rp <?= number_format($produk->harga * $produk->jumlah_produk, 0,',','.') ?></td>
-                    <td>
+                    <td rowspan="2"><b>Rp <?= number_format($produk->harga * $produk->jumlah_produk, 0,',','.') ?></b></td>
+                    <td rowspan="2">
                         <a href="<?= base_url('/keranjang/hapus_produk/') . $produk->id_keranjang ?>" class="btn btn-sm btn btn-danger">Hapus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="<?= base_url('/keranjang/tambah_catatan_produk') ?>" method="post">
+                            <input type="hidden" name="id_keranjang" value="<?= $produk->id_keranjang ?>">
+                            <textarea onblur="this.form.submit()" name="catatan" id="catatan" rows="2" class="form-control" placeholder="Tambahkan catatan. cth: link desain dll"><?= $produk->catatan ?></textarea>
+                        </form>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -53,7 +71,7 @@
 
         <div class="d-flex justify-content-end align-items-center">
             <b class="h5">Total Pesanan: Rp <?= number_format($total_pesanan,0,',','.') ?></b>
-            <a href="" class="ms-4 btn btn-success">Checkout <i class="fas fa-arrow-right"></i></a>
+            <a href="<?= base_url('/checkout') ?>" class="ms-4 btn btn-success">Checkout <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </div>

@@ -57,15 +57,30 @@ class Keranjang extends CI_Controller {
         redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function ubah_keranjang()
+    public function ubah_jumlah_produk()
     {
         $data = [
             'id_keranjang' => $this->input->post('id_keranjang'),
             'jumlah_produk' => $this->input->post('jumlah_produk'),
+            
         ];
 
         $this->db->where('id_keranjang', $data['id_keranjang'])->update('keranjang', [
             'jumlah_produk' => $data['jumlah_produk'],
+        ]);
+
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
+    public function tambah_catatan_produk()
+    {
+        $data = [
+            'id_keranjang' => $this->input->post('id_keranjang'),
+            'catatan' => $this->input->post('catatan'),  
+        ];
+
+        $this->db->where('id_keranjang', $data['id_keranjang'])->update('keranjang', [
+            'catatan' => $data['catatan'],
         ]);
 
         redirect($_SERVER['HTTP_REFERER']);

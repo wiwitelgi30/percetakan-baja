@@ -38,7 +38,7 @@ class Produk extends CI_Controller {
 
     public function tambah_produk()
     {
-        $getLastProduk = $this->db->get('produk')->row();
+        $getLastProduk = $this->db->order_by('id_produk', 'DESC')->get('produk')->row();
         $id_produk = 'P' . date('y') . '01';
         
         if (isset($getLastProduk)) {
