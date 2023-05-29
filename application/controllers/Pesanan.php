@@ -32,9 +32,28 @@ class Pesanan extends CI_Controller {
         $this->load->view('pelanggan/layouts/app', $data);
     }
 
-    public function detail()
+    public function detail($id_pesanan)
     {
+        $pesanan = $this->db->where('id_pesanan', $id_pesanan)
+                ->order_by('id_pesanan', 'DESC')
+                ->get('pesanan')->row();
 
+        $pesanan->detail = $this->db->from('detail_pesanan')
+                ->join('produk', 'produk.id_produk=detail_pesanan.id_produk', 'left')
+                ->where('id_pesanan', $pesanan->id_pesanan)
+                ->get()->result();
+
+        $pesanan->total = $this->db->select('SUM(jumlah_produk * produk.harga) as total')
+                ->from('detail_pesanan')
+                ->join('produk', 'produk.id_produk=detail_pesanan.id_produk', 'left')
+                ->where('id_pesanan', $pesanan->id_pesanan)
+                ->get()->row()->total;
+
+        $data = [
+            'content'=>'pelanggan/detail-pesanan',
+            'pesanan' => $pesanan,
+        ];
+        $this->load->view('pelanggan/layouts/app', $data);
     }
 
     public function bayar_pesanan()

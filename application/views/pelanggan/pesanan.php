@@ -58,7 +58,7 @@
                             data-total_pesanan="<?= $row->total_harga ?>" class="bayar-pesanan btn btn-sm btn btn-success">Bayar</a>
                         <?php endif; ?>
 
-                        <a href="" class="btn btn-sm btn btn-outline-success">Detail</a>
+                        <a href="<?= base_url('/pesanan/detail/') . $row->id_pesanan ?>" class="btn btn-sm btn btn-outline-success">Detail</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
