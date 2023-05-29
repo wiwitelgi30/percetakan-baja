@@ -62,6 +62,7 @@ class Produk extends CI_Controller {
             'stok' => $this->input->post('stok'),
             'harga' => $this->input->post('harga'),
             'deskripsi' => $this->input->post('deskripsi'),
+            'slug' => url_title($this->input->post('nama_produk'), 'dash', true),
         ];
 
         $this->db->insert('produk', $data);
@@ -99,6 +100,7 @@ class Produk extends CI_Controller {
             'stok' => $this->input->post('stok'),
             'harga' => $this->input->post('harga'),
             'deskripsi' => $this->input->post('deskripsi'),
+            'slug' => url_title($this->input->post('nama_produk'), 'dash', true),
         ];
 
         if ($_FILES['gambar']['name']) {
