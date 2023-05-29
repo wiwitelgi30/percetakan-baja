@@ -51,7 +51,7 @@ class Keranjang extends CI_Controller {
         }
         
         else {
-            $this->db->insert('kategori', $data);
+            $this->db->insert('keranjang', $data);
         }
 
         redirect($_SERVER['HTTP_REFERER']);

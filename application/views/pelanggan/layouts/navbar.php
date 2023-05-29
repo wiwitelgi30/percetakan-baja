@@ -15,7 +15,8 @@
                 </div>
                 <?php else: ?>
                 <div>
-                    <a href="<?= base_url('auth/logout') ?>" class="btn btn-outline-light">Logout</a>
+                    <a href="<?= base_url('/pesanan') ?>" class="btn btn-success">Pesanan Saya</a>
+                    <a href="<?= base_url('auth/logout') ?>" class="ms-2 btn btn-outline-light">Logout</a>
                 </div>
                 <?php endif; ?>
             </div>

@@ -34,12 +34,17 @@ class Checkout extends CI_Controller {
             'id_user' => $this->session->userdata('id_user'),
         ];
 
-        $keranjang = $this->db->select('SUM(jumlah_produk * produk.harga) as total_harga, keranjang.id_produk, jumlah_produk, catatan')
+        $keranjang = $this->db->select('keranjang.id_produk, jumlah_produk, catatan')
                 ->from('keranjang')
                 ->join('produk', 'produk.id_produk=keranjang.id_produk', 'left')
                 ->get()->result();
 
         if (count($keranjang) > 0) {
+            $total_pesanan = $this->db->select('SUM(jumlah_produk * produk.harga) as total_harga')
+                ->from('keranjang')
+                ->join('produk', 'produk.id_produk=keranjang.id_produk', 'left')
+                ->get()->row()->total_harga;
+
             ## PESANAN
                 $getLastPesanan = $this->db->order_by('id_pesanan', 'DESC')->get('pesanan')->row();
                 $id_pesanan = 'PS' . date('y') . '001';
@@ -51,7 +56,7 @@ class Checkout extends CI_Controller {
                 $this->db->insert('pesanan', [
                     'id_pesanan' => $id_pesanan,
                     'id_user' => $data['id_user'],
-                    'total_harga' => $keranjang[0]->total_harga,
+                    'total_harga' => $total_pesanan,
                 ]);
     
             ## DETAIL PESANAN
