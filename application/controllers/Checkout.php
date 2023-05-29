@@ -74,6 +74,6 @@ class Checkout extends CI_Controller {
                 $this->db->delete('keranjang');
         }
 
-        redirect($_SERVER['HTTP_REFERER']);
+        redirect('/checkout');
     }
 }

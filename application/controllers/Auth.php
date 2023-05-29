@@ -84,6 +84,7 @@ class Auth extends CI_Controller {
     {
         $sessData = [
             'id_user'   => $data->id_user,
+            'nama'      => $data->nama,
             'email'     => $data->email,
             'role'      => $data->nama_role,
             'logged_in' => TRUE,
