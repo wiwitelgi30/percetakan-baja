@@ -22,7 +22,7 @@
                 <select class="form-control" id="kategori" name="id_kategori_produk">
                     <option>Kategori</option>
                     <?php foreach ($kategori_produk as $row): ?>
-                        <option value="<?= $row->id_kategori_produk ?>" selected="<?php ($produk->id_kategori_produk == $row->id_kategori_produk) ?>"><?= $row->nama_kategori_produk ?></option>
+                        <option value="<?= $row->id_kategori_produk ?>" <?= ($produk->id_kategori_produk == $row->id_kategori_produk) ? 'selected' : '' ?>><?= $row->nama_kategori_produk ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
