@@ -35,7 +35,7 @@ $keranjang = $this->db->get_where('keranjang', ['id_user' => $this->session->use
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"><?= count($keranjang) ?></span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <a class="nav-icon position-relative text-decoration-none" href="<?= base_url('/profile') ?>">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <!-- <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span> -->
                     </a>
