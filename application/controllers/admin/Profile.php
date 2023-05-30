@@ -20,5 +20,11 @@ class Profile extends CI_Controller {
         ];
     $this->load->view('admin/layouts/app', $data);
     }
+
+    public function ubah_profile()
+    {}
+
+    public function ubah_password()
+    {}
 }
 ?>
