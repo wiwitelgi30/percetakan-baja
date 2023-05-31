@@ -27,10 +27,6 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="stok" class="form-label">Stok Produk</label>
-                <input type="number" class="form-control" id="stok" name="stok" value="<?= $produk->stok ?>" placeholder="Stok Produk">
-            </div> 
-            <div class="mb-3">
                 <label for="harga" class="form-label">Harga Produk</label>
                 <input type="texe" class="form-control" id="harga" name="harga" value="<?= $produk->harga ?>" placeholder="Harga Produk">
             </div>

@@ -39,7 +39,7 @@
                             <div class="row">
                                 <input type="hidden" name="id_keranjang" value="<?= $produk->id_keranjang ?>">
                                 <div class="col-3">
-                                    <input type="number" name="jumlah_produk" id="jumlah_produk" value="<?= $produk->jumlah_produk ?>" class="form-control form-control-sm" min="1" max="<?= $produk->stok ?>">
+                                    <input type="number" name="jumlah_produk" id="jumlah_produk" value="<?= $produk->jumlah_produk ?>" class="form-control form-control-sm" min="1">
                                 </div>
                                 <div class="col-9">
                                     <button type="submit" class="btn btn-success">Ubah</button>

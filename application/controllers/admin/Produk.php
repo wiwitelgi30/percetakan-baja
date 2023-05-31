@@ -59,7 +59,6 @@ class Produk extends CI_Controller {
             'nama_produk' => $this->input->post('nama_produk'),
             'gambar' => $upload['file_name'],
             'id_kategori_produk' => $this->input->post('id_kategori_produk'),
-            'stok' => $this->input->post('stok'),
             'harga' => $this->input->post('harga'),
             'deskripsi' => $this->input->post('deskripsi'),
             'slug' => url_title($this->input->post('nama_produk'), 'dash', true),
@@ -97,7 +96,6 @@ class Produk extends CI_Controller {
         $data = [
             'nama_produk' => $this->input->post('nama_produk'),
             'id_kategori_produk' => $this->input->post('id_kategori_produk'),
-            'stok' => $this->input->post('stok'),
             'harga' => $this->input->post('harga'),
             'deskripsi' => $this->input->post('deskripsi'),
             'slug' => url_title($this->input->post('nama_produk'), 'dash', true),

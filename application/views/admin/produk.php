@@ -17,7 +17,6 @@
                         <th>Gambar</th>
                         <th>Nama Produk</th>
                         <th>Kategori Produk</th>
-                        <th>Stok</th>
                         <th>Harga</th>
                         <th>Aksi</th>
                     </tr>
@@ -30,7 +29,6 @@
                         <td><img src="<?= base_url('assets/uploads/') . $row->gambar ?>" class="img-fluid" width="75px" alt="Gambar Produk"></td>
                         <td><?= $row->nama_produk ?></td>
                         <td><?= $row->nama_kategori_produk ?></td>
-                        <td><?= $row->stok ?></td>
                         <td>Rp. <?= $row->harga ?></td>
                         <td>
                             <a href="<?= base_url('admin/produk/ubah/') . $row->id_produk ?>" class="btn btn-info">Ubah</a>
