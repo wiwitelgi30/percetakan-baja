@@ -8,6 +8,7 @@
 <div class="card shadow mb-4">
 
     <div class="card-body">
+        <button id="print" class="mb-3 btn btn-primary">Print</button>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -38,4 +39,19 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<script>
+function printData()
+{
+   var divToPrint=document.getElementById("dataTable");
+   newWin= window.open("");
+   newWin.document.write(divToPrint.outerHTML);
+   newWin.print();
+   newWin.close();
+}
+
+document.getElementById('print').onclick = function() {
+    printData()
+}
+</script>
 

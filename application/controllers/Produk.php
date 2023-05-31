@@ -26,8 +26,6 @@ class Produk extends CI_Controller {
             'produk' => $this->db->select('*')
                     ->from('produk as p')
                     ->join('kategori_produk as kp', 'kp.id_kategori_produk = p.id_kategori_produk')
-                    ->like('nama_produk', $this->input->get('search'), 'left')
-                    ->like('nama_kategori_produk', $this->input->get('kategori'), 'left')
                     ->where('slug', $slug)
                     ->get()->row(),
         ];
