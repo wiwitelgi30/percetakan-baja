@@ -4,8 +4,7 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Kategori Produk</h1>
                 <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Percetakan Baja menyediakan kategori agar dapat memudahkan pelanggan dalam mencari produk yang ingin melakukan proses jasa cetak.
                 </p>
             </div>
         </div>
@@ -28,8 +27,7 @@
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1">Produk Terbaru</h1>
                     <p>
-                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident.
+                        Percetakan Baja menyediakan beberapa produk jasa cetak sablon terbaru guna membantu pengusaha atau organisasi dalam mempromosikan maupun meningkatkan citra dengan menambahkan merek atau label pada produk anda.
                     </p>
                 </div>
             </div>

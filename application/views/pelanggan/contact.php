@@ -11,11 +11,11 @@
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:082114576332">082114576332</a>
+                            <a class="text-decoration-none" href="tel:08128105312">08128105312</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:wiwitelgi30@gmail.com">wiwitelgi30@gmail.com</a>
+                            <a class="text-decoration-none" href="mailto:jimisablon3@gmail.com">jimisablon3@gmail.com</a>
                         </li>
                     </ul>
             </p>

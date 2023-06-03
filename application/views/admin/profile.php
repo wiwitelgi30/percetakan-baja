@@ -42,7 +42,7 @@
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="<?php echo base_url('admin/profile/ubah_password') ?>">
-                                    <input type="hidden" name="id_user" value="<?= $pelanggan->id_user ?>">
+                                    <input type="hidden" name="id_user" value="<?= $admin->id_user ?>">
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password saat ini</label>
                                         <input type="password" class="form-control" name="password_sekarang" id="Password" placeholder="Password saat ini">
