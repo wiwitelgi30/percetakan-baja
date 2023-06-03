@@ -4,7 +4,7 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:jimisablon3@gmail.com">wiwitelgi30@gmail.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:jimisablon3@gmail.com">jimisablon3@gmail.com</a>
                     <i class="fa fa-phone mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none" href="tel:08128105312">08128105312</a>
                 </div>
