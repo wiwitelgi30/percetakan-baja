@@ -4,7 +4,7 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Kategori Produk</h1>
                 <p>
-                    Percetakan Baja menyediakan kategori agar dapat memudahkan pelanggan dalam mencari produk yang ingin melakukan proses jasa cetak.
+                    Percetakan Baja menyediakan kategori agar dapat memudahkan pelanggan dalam mencari produk yang memerlukan proses jasa cetak.
                 </p>
             </div>
         </div>
