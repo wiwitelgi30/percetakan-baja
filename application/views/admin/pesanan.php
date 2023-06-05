@@ -13,7 +13,7 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Pesanan Saya</h1>
+<h1 class="h3 mb-2 text-gray-800">Pesanan Sablon</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -72,7 +72,7 @@
                     <?php endforeach; ?>
                     <?php else: ?>
                     <tr>
-                        <td colspan="4" class="text-center p-5">Pesanan anda masih kosong.</td>
+                        <td colspan="4" class="text-center p-5">Pesanan sablon masih kosong.</td>
                     </tr>
                     <?php endif; ?>
                 </tbody>

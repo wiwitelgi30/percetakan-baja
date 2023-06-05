@@ -49,7 +49,7 @@
 <li class="nav-item">
     <a class="nav-link" href="<?= base_url('admin/pesanan');?>">
         <i class="fas fa-fw fa-table"></i>
-        <span>Pesanan Saya</span>
+        <span>Pesanan Sablon</span>
     </a>
 </li>
 

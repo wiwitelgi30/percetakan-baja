@@ -12,7 +12,7 @@ $kategori_produk = $this->db->select('*')->get('kategori_produk')->result();
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Komp. Pertokoan PRIMKOPAD, Jl. Raya Bogor No.2, RT.4/RW.6, Kramat Jati, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13510
+                            <a class="text-decoration-none" href="maps:Komp. Pertokoan PRIMKOPAD, Jl. Raya Bogor No.2, RT.4/RW.6, Kramat Jati, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13510">Komp. Pertokoan PRIMKOPAD, Jl. Raya Bogor No.2, RT.4/RW.6, Kramat Jati, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13510</a>
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>

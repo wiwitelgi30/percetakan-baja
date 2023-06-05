@@ -23,6 +23,7 @@
 
                             <h6>Deskripsi:</h6>
                             <p><?= $produk->deskripsi ?></p>
+                            <small>*Harga masih dapat berubah tergantung pemesanan, silahkan hubungi nomor telepon yang tertera untuk informasi lebih lanjut.</small>
 
                             <form action="<?= base_url('/keranjang/tambah_keranjang') ?>" method="POST">
                                 <input type="hidden" name="id_produk" value="<?= $produk->id_produk ?>">
