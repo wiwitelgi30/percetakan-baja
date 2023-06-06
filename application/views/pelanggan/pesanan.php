@@ -93,7 +93,7 @@
                         </tr>
                         <tr>
                             <th>Nomor Rekening</th>
-                            <td>&nbsp;&nbsp; : <b class="text-primary">BRI</b> - <b>123123121323</b> a.n Wiwit</td>
+                            <td>&nbsp;&nbsp; : <b class="text-primary">BRI</b> - <b>086201011878531</b> a.n Jimianto</td>
                         </tr>
                     </table>
                 </div>

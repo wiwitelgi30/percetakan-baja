@@ -9,6 +9,8 @@
     <meta name="author" content="">
 
     <title>Percetakan Baja - Dashboard</title>
+    <link rel="apple-touch-icon" href="<?= base_url('assets/admin/img/apple-icon.png'); ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/admin/img/favicon.ico'); ?> ">
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet');?>" type="text/css">
