@@ -19,15 +19,15 @@
                                     <input type="hidden" name="id_user" value="<?= $admin->id_user ?>">
                                     <div class="mb-3">
                                         <label for="nama" class="form-label">Nama</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $admin->nama ?>" placeholder="Nama Anda">
+                                        <input type="text" class="form-control" name="nama" id="nama" value="<?= $admin->nama ?>" placeholder="Nama Anda" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="alamat" class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $admin->alamat ?>" placeholder="Alamat Anda">
+                                        <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $admin->alamat ?>" placeholder="Alamat Anda" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="no_hp" class="form-label">Nomor Handphone</label>
-                                        <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $admin->no_hp ?>" placeholder="Nomor Hancphone Anda">
+                                        <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $admin->no_hp ?>" placeholder="Nomor Hancphone Anda" required>
                                     </div>
                                     <button style="float: right" type="submit" class="btn btn-primary"> Save</button>
                                 </form>
