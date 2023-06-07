@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="no_hp" class="form-label">Nomor Handphone</label>
-                                        <input type="text" class="form-control" name="no_hp" id="no_hp" value="<?= $admin->no_hp ?>" placeholder="Nomor Hancphone Anda" required>
+                                        <input type="number" class="form-control" name="no_hp" id="no_hp" value="<?= $admin->no_hp ?>" placeholder="Nomor Hancphone Anda" min="10" required>
                                     </div>
                                     <button style="float: right" type="submit" class="btn btn-primary"> Save</button>
                                 </form>

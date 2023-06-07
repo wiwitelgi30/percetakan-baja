@@ -110,7 +110,7 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
                 <div class="form-group mb-4">
                     <label for="daftar-no_hp" class="form-label">No. HP (Whatsapp)</label>
-                    <input type="text" id="daftar-no_hp" name="no_hp" class="form-control" placeholder="Masukkan No. HP" required>
+                    <input type="number" id="daftar-no_hp" name="no_hp" class="form-control" placeholder="Masukkan No. HP" required>
                 </div>
                 <div class="form-group mb-4">
                     <label for="daftar-email" class="form-label">Email</label>
