@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 11:14 AM
+-- Generation Time: Jun 11, 2023 at 06:32 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -182,7 +182,7 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `gambar`, `id_kategori_produk`
 ('P2319', 'Banner / Spanduk Flexi ', 0x7370616e64756b2e6a7067, 4, '25000', 'Harga per meter (1 piece)', 'banner-spanduk-flexi'),
 ('P2320', 'Banner / Spanduk Albatros', 0x7370616e64756b5f616c626174726f732e6a7067, 4, '85000', 'Harga per meter (1 piece)', 'banner-spanduk-albatros'),
 ('P2321', 'Banner / Spanduk Korcin', 0x7370616e64756b5f6b6f7263696e2e6a7067, 4, '45000', 'Harga per meter (1 piece)', 'banner-spanduk-korcin'),
-('P2322', 'x banner', 0x582d62616e6e6572312e6a7067, 4, '1000', 'coba', 'x-banner');
+('P2322', 'X-Banner', 0x582d62616e6e6572322e6a7067, 4, '250000', 'Harga per 1 piece', 'x-banner');
 
 -- --------------------------------------------------------
 
@@ -225,12 +225,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `alamat`, `no_hp`, `email`, `password`, `foto`, `id_role`) VALUES
-(1, 'user', 'userhome', '0812345678910', 'user@gmail.com', '$2y$10$UacekmPlKtAtJJLYxTYIYORn5Vu3TlQxTE1Amm9hbI3GDpUlhUiBG', NULL, 1),
-(2, 'John', 'Jl. Apel 212', '081345678910', 'admin@gmail.com', '$2y$10$UacekmPlKtAtJJLYxTYIYORn5Vu3TlQxTE1Amm9hbI3GDpUlhUiBG', NULL, 2),
-(4, 'Maulana Aprizqy Sumaryanto', 'asdasdasd', '081345678910', 'maulana4pz@gmail.com', '$2y$10$DdQfXB39Fvvr2nArWvw0t.5LE6vAkXNvTBKtwbFPNwX0iJ2LjqIBu', NULL, 1),
-(5, 'Wiwit Elgi Saputra', 'Perumahan Bumi Sentosa Asri', '082114576332', 'wiwitelgi30@gmail.com', '$2y$10$jXQj8knqSHQM8E2g20HLNOJkPk8PqkV6h9ueNtzKCskTXCB8HcT7i', NULL, 1),
-(6, 'Tes', 'Bekasi', '082114576332', 'tes@gmail.com', '$2y$10$CJa4mLeXISrhj2yH8vKXYeZOmJT5w4./UcWG0pSbpGwoFkHbNC46a', NULL, 1),
-(7, 'Wiwit', 'Bekasi', '082114576332', 'wiwit@gmail.com', '$2y$10$3R9xNZTcoof7yEmrN9FYgONoes9Y9uFOWXHsWa3N2GVt4/UOJusIW', NULL, 1);
+(1, 'User', 'userhome', '0812345678910', 'user@gmail.com', '$2y$10$7mzIl.CFV9Ly19SWgJcb2.6KU71CwuO8UqnujVwLb9l9/eHJBRBLu', NULL, 1),
+(2, 'Admin', 'Jl. Apel 212', '081345678910', 'admin@gmail.com', '$2y$10$7mzIl.CFV9Ly19SWgJcb2.6KU71CwuO8UqnujVwLb9l9/eHJBRBLu', NULL, 2);
 
 --
 -- Indexes for dumped tables
@@ -310,7 +306,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
