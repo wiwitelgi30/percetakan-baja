@@ -19,7 +19,6 @@
     </section>
     <!-- End Categories of The Month -->
 
-
     <!-- Start Featured Product -->
     <section class="bg-light">
         <div class="container py-5">

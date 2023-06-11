@@ -4,13 +4,13 @@ $keranjang = $this->db->get_where('keranjang', ['id_user' => $this->session->use
 
 <!-- Header -->
 <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href=<?= base_url('/');?>>Percetakan Baja</a>
+        <a class="navbar-brand text-success logo h1 align-self-center" href=<?= base_url('/');?>>Percetakan Baja</a>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
@@ -42,7 +42,25 @@ $keranjang = $this->db->get_where('keranjang', ['id_user' => $this->session->use
                 </div>
                 <?php endif; ?>
             </div>
-
+            <div>
+                <div class="container text-light">
+                    <div class="w-100 d-flex justify-content-between">
+                        <?php if (! $this->session->userdata('logged_in')): ?>
+                        <div>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="me-2 btn btn-success">Login</button>
+                        </div>
+                        <div>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#daftarModal" class="btn btn-light">Daftar</button>
+                        </div>
+                        <?php else: ?>
+                        <div>
+                            <a href="<?= base_url('/pesanan') ?>" class="btn btn-success">Pesanan Saya</a>
+                            <a href="<?= base_url('auth/logout') ?>" class="ms-2 btn btn-outline-light">Logout</a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+</nav>
     <!-- Close Header -->
