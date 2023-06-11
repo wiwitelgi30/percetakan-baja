@@ -50,12 +50,14 @@ $keranjang = $this->db->get_where('keranjang', ['id_user' => $this->session->use
                             <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="me-2 btn btn-success">Login</button>
                         </div>
                         <div>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#daftarModal" class="btn btn-light">Daftar</button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#daftarModal" class="btn btn-secondary">Daftar</button>
                         </div>
                         <?php else: ?>
                         <div>
                             <a href="<?= base_url('/pesanan') ?>" class="btn btn-success">Pesanan Saya</a>
-                            <a href="<?= base_url('auth/logout') ?>" class="ms-2 btn btn-outline-light">Logout</a>
+                        </div>
+                        <div>
+                            <a href="<?= base_url('auth/logout') ?>" class="ms-2 btn btn-danger">Logout</a>
                         </div>
                         <?php endif; ?>
                     </div>

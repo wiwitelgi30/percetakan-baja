@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <?php $this->load->view('pelanggan/layouts/navbar');?>
     <?php $this->load->view('pelanggan/layouts/header');?>
     <?php $this->load->view($content);?>
     <?php $this->load->view('pelanggan/layouts/footer');?>
