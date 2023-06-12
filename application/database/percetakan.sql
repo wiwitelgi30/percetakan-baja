@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 06:32 AM
+-- Generation Time: Jun 12, 2023 at 09:52 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -34,36 +34,6 @@ CREATE TABLE `detail_pesanan` (
   `jumlah_produk` int(11) NOT NULL,
   `catatan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `detail_pesanan`
---
-
-INSERT INTO `detail_pesanan` (`id_detail_pesanan`, `id_pesanan`, `id_produk`, `jumlah_produk`, `catatan`) VALUES
-(1, 'PS23001', 'P2301', 1, NULL),
-(2, 'PS23001', 'P2302', 1, NULL),
-(3, 'PS23002', 'P2301', 1, NULL),
-(4, 'PS23003', 'P2301', 11, 'desain kantong kanan 5'),
-(5, 'PS23003', 'P2302', 1, 'link'),
-(6, 'PS23003', 'P2311', 1000, NULL),
-(7, 'PS23004', 'P2301', 11, 'desain kantong kanan 5'),
-(8, 'PS23004', 'P2302', 1, 'link'),
-(9, 'PS23005', 'P2301', 11, 'desain kantong kanan 5'),
-(10, 'PS23005', 'P2302', 1, 'link'),
-(11, 'PS23006', 'P2312', 1, 'Design logo ubsi'),
-(12, 'PS23007', 'P2301', 1, NULL),
-(13, 'PS23008', 'P2301', 1, NULL),
-(14, 'PS23009', 'P2301', 1, NULL),
-(15, 'PS23010', 'P2301', 1, 'coba'),
-(16, 'PS23011', 'P2301', 1, NULL),
-(17, 'PS23012', 'P2303', 1, 'coba'),
-(18, 'PS23013', 'P2307', 1, 'tes'),
-(19, 'PS23014', 'P2304', 2, 'testing'),
-(20, 'PS23015', 'P2311', 1, NULL),
-(21, 'PS23016', 'P2312', 2, 'coba'),
-(22, 'PS23017', 'P2305', 1, NULL),
-(23, 'PS23018', 'P2310', 1, NULL),
-(24, 'PS23019', 'P2307', 50, 'contoh');
 
 -- --------------------------------------------------------
 
@@ -114,31 +84,6 @@ CREATE TABLE `pesanan` (
   `bukti_bayar` blob DEFAULT NULL,
   `status_pesanan` enum('Menunggu Pembayaran','Dalam Proses','Selesai') DEFAULT 'Menunggu Pembayaran'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pesanan`
---
-
-INSERT INTO `pesanan` (`id_pesanan`, `id_user`, `total_harga`, `bukti_bayar`, `status_pesanan`) VALUES
-('PS23001', 1, '22000', 0x6c656d6261725f706572736574756a75616e5f504d4b2e6a7067, 'Selesai'),
-('PS23002', 1, '20000', 0x63726f707065645f6c656d6261725f706572736574756a75616e5f504d4b2e6a7067, 'Selesai'),
-('PS23003', 2, '5010500', NULL, 'Menunggu Pembayaran'),
-('PS23004', 2, '10500', NULL, 'Menunggu Pembayaran'),
-('PS23005', 2, '10500', NULL, 'Menunggu Pembayaran'),
-('PS23006', 5, '5000', 0x6c6f676f5f6273692e706e67, 'Selesai'),
-('PS23007', 2, '500', NULL, 'Menunggu Pembayaran'),
-('PS23008', 2, '500', NULL, 'Menunggu Pembayaran'),
-('PS23009', 2, '500', 0x6c6f676f5f627369312e706e67, 'Selesai'),
-('PS23010', 2, '500', NULL, 'Menunggu Pembayaran'),
-('PS23011', 1, '500', 0x68616e642d7061696e7465642d6261636b67726f756e642d76696f6c65742d6f72616e67652d636f6c6f7572735f32332d323134383432373537382e6a7067, 'Selesai'),
-('PS23012', 1, '3600', 0x68616e642d7061696e7465642d6261636b67726f756e642d76696f6c65742d6f72616e67652d636f6c6f7572735f32332d32313438343237353738312e6a7067, 'Dalam Proses'),
-('PS23013', 1, '50000', NULL, 'Menunggu Pembayaran'),
-('PS23014', 1, '30000', NULL, 'Menunggu Pembayaran'),
-('PS23015', 1, '250', NULL, 'Menunggu Pembayaran'),
-('PS23016', 1, '10000', 0x6c6f676f5f627369322e706e67, 'Selesai'),
-('PS23017', 2, '40000', NULL, 'Menunggu Pembayaran'),
-('PS23018', 1, '1500', NULL, 'Menunggu Pembayaran'),
-('PS23019', 1, '2500000', 0x6c6f676f5f554253492e6a7067, 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -282,7 +227,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
-  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `kategori_produk`
@@ -294,7 +239,7 @@ ALTER TABLE `kategori_produk`
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_keranjang` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -306,7 +251,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

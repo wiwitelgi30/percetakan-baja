@@ -37,7 +37,7 @@ class Profile extends CI_Controller {
         // check user
         $this_user = $this->db->where('id_user', $id_user)->get('users')->row();
 
-        if ($this_user->password == password_verify($password_sekarang)) {
+        if ($this_user->password == password_verify($password_sekarang, $this_user->password)) {
             $data = [
                 'password' => password_hash($this->input->post('password_baru'), PASSWORD_DEFAULT),
             ];
