@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 09:52 AM
+-- Generation Time: Jun 15, 2023 at 09:33 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -170,7 +170,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `alamat`, `no_hp`, `email`, `password`, `foto`, `id_role`) VALUES
-(1, 'User', 'userhome', '0812345678910', 'user@gmail.com', '$2y$10$7mzIl.CFV9Ly19SWgJcb2.6KU71CwuO8UqnujVwLb9l9/eHJBRBLu', NULL, 1),
+(1, 'User', 'userhome', '0812345678910', 'user@gmail.com', '$2y$10$w3j/NQjORuiX2wRFzGknpe14rucvpR3agRuxDUxyJiR4IcQK3YaTK', NULL, 1),
 (2, 'Admin', 'Jl. Apel 212', '081345678910', 'admin@gmail.com', '$2y$10$7mzIl.CFV9Ly19SWgJcb2.6KU71CwuO8UqnujVwLb9l9/eHJBRBLu', NULL, 2);
 
 --
@@ -227,7 +227,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
-  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_detail_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `kategori_produk`
@@ -239,7 +239,7 @@ ALTER TABLE `kategori_produk`
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_keranjang` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `roles`
