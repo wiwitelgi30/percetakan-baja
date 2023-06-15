@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="password baru" class="form-label">Password baru</label>
-                                        <input type="password" class="form-control" name="password_baru" id="Password baru" placeholder="Masukkan password baru" required>
+                                        <input type="password" class="form-control" name="password_baru" id="Password Baru" placeholder="Masukkan password baru" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="konfirmasi Password" class="form-label">Konfirmasi Password</label>
@@ -65,3 +65,19 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+
+<script>
+var password = document.getElementById("Password Baru")
+, confirm_password = document.getElementById("Konfirmasi Password");
+
+function validatePassword(){
+    if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+        confirm_password.setCustomValidity('');
+    }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
