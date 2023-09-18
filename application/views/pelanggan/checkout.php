@@ -18,6 +18,7 @@
                     <th>Produk</th>
                     <th>Total Harga</th>
                     <th>Catatan</th>
+                    <th>Link Desain Produk</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +36,7 @@
                     </td>
                     <td><b>Rp <?= number_format($produk->harga * $produk->jumlah_produk, 0,',','.') ?></b></td>
                     <td><?= $produk->catatan ?? '-' ?></td>
+                    <td><a href="<?= $produk->link_design ?>" target="_blank">Link Desain</a></td>
                 </tr>
                 <?php endforeach; ?>
                 <?php else: ?>

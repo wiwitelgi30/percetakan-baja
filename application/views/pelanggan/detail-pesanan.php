@@ -20,6 +20,7 @@
                 <tr>
                     <th>Daftar Pesanan</th>
                     <th>Catatan</th>
+                    <th>Link Desain</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                         </div>
                     </td>
                     <td><?= $item->catatan ?></td>
+                    <td><a href="<?= $item->link_design ?>" target="_blank">Link Desain</a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

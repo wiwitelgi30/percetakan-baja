@@ -11,25 +11,44 @@ class Laporan extends CI_Controller {
             exit;
         }
     }
-    
-    public function penjualan()
+
+    public function index()
     {
-        $produk = $this->db->select('*')
-                ->from('produk as p')
-                ->join('kategori_produk as kp', 'kp.id_kategori_produk = p.id_kategori_produk')
+        $pesanan = $this->db->from('pesanan')
+                ->where('status_pesanan',  'Selesai')
+                ->order_by('id_pesanan', 'DESC')
                 ->get()->result();
 
-        foreach ($produk as $row) {
-            $row->terjual = $this->db->select('COUNT(id_detail_pesanan) as terjual')
-                    ->join('pesanan', 'pesanan.id_pesanan=detail_pesanan.id_pesanan', 'left')
-                    ->where('detail_pesanan.id_produk', $row->id_produk)
-                    ->where('pesanan.status_pesanan', 'Selesai')
-                    ->get('detail_pesanan')->row()->terjual;
+        foreach ($pesanan as $row) {
+            $row->detail = $this->db->from('detail_pesanan')
+                    ->join('produk', 'produk.id_produk=detail_pesanan.id_produk', 'left')
+                    ->where('id_pesanan', $row->id_pesanan)
+                    ->get()->result();
         }
 
         $data = [
-            'content'=>'admin/laporan-penjualan',
-            'produk' => $produk,
+            'content' => 'admin/laporan',
+            'pesanan' => $pesanan,
+        ];
+        $this->load->view('admin/layouts/app', $data);
+    }
+
+    public function detail($id_pesanan)
+    {
+        $pesanan = $this->db->from('pesanan')
+                ->join('users', 'users.id_user=pesanan.id_user', 'left')
+                ->where('id_pesanan', $id_pesanan)
+                ->order_by('id_pesanan', 'DESC')
+                ->get()->row();
+
+        $pesanan->detail = $this->db->from('detail_pesanan')
+                ->join('produk', 'produk.id_produk=detail_pesanan.id_produk', 'left')
+                ->where('id_pesanan', $pesanan->id_pesanan)
+                ->get()->result();
+
+        $data = [
+            'content'=>'admin/detail-laporan',
+            'pesanan' => $pesanan,
         ];
         $this->load->view('admin/layouts/app', $data);
     }

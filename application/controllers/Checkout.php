@@ -34,7 +34,7 @@ class Checkout extends CI_Controller {
             'id_user' => $this->session->userdata('id_user'),
         ];
 
-        $keranjang = $this->db->select('keranjang.id_produk, jumlah_produk, catatan')
+        $keranjang = $this->db->select('keranjang.id_produk, jumlah_produk, catatan, keranjang.link_design')
                 ->from('keranjang')
                 ->join('produk', 'produk.id_produk=keranjang.id_produk', 'left')
                 ->get()->result();
@@ -66,6 +66,7 @@ class Checkout extends CI_Controller {
                         'id_produk' => $produk->id_produk,
                         'jumlah_produk' => $produk->jumlah_produk,
                         'catatan' => $produk->catatan,
+                        'link_design' => $produk->link_design
                     ]);
                 }
 

@@ -13,12 +13,13 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Pesanan Sablon</h1>
+<h1 class="h3 mb-2 text-gray-800">Laporan Penjualan</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
     <div class="card-body">
+        <button id="print" class="mb-3 btn btn-primary">Print</button>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -77,3 +78,32 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<script>
+function printData()
+{
+   var divToPrint = document.getElementById("dataTable");
+   newWin = window.open("");
+   newWin.document.write(divToPrint.outerHTML);
+   newWin.print();
+   newWin.close();
+}
+
+function generatePdf() {
+    window.jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF()
+    doc.autoTable({
+        html: '#dataTable',
+        columns: [
+            { header: 'Pesanan', dataKey: 'pesanan' },
+            { header: 'Total Pesanan', dataKey: 'total_pesanan' },
+            { header: 'Status', dataKey: 'Status' }
+        ],
+    })
+    doc.save('laporan.pdf')
+}
+
+document.getElementById('print').onclick = function() {
+    generatePdf()
+}
+</script>

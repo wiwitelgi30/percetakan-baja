@@ -20,7 +20,6 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/admin/css/sb-admin-2.min.css');?>" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -91,6 +90,8 @@
 
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url('assets/admin/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
+    <script src="<?= base_url('assets/jspdf.min.js') ?>"></script>
+    <script src="<?= base_url('assets/jspdf.plugin.autotable.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets/admin/js/sb-admin-2.min.js');?>"></script>

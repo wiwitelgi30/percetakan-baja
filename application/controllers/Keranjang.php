@@ -76,11 +76,13 @@ class Keranjang extends CI_Controller {
     {
         $data = [
             'id_keranjang' => $this->input->post('id_keranjang'),
-            'catatan' => $this->input->post('catatan'),  
+            'catatan' => $this->input->post('catatan'),
+            'link_design' => $this->input->post('link_design')
         ];
 
         $this->db->where('id_keranjang', $data['id_keranjang'])->update('keranjang', [
             'catatan' => $data['catatan'],
+            'link_design' => $data['link_design']
         ]);
 
         redirect($_SERVER['HTTP_REFERER']);

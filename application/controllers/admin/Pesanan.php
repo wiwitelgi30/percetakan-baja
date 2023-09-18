@@ -14,9 +14,10 @@ class Pesanan extends CI_Controller {
     
     public function index()
     {
-        $pesanan = $this->db->where('status_pesanan', 'Dalam Proses')
+        $pesanan = $this->db->from('pesanan')
+                ->where('status_pesanan',  'Dalam Proses')
                 ->order_by('id_pesanan', 'DESC')
-                ->get('pesanan')->result();
+                ->get()->result();
 
         foreach ($pesanan as $row) {
             $row->detail = $this->db->from('detail_pesanan')
@@ -34,9 +35,11 @@ class Pesanan extends CI_Controller {
 
     public function detail($id_pesanan)
     {
-        $pesanan = $this->db->where('id_pesanan', $id_pesanan)
+        $pesanan = $this->db->from('pesanan')
+                ->join('users', 'users.id_user=pesanan.id_user', 'left')
+                ->where('id_pesanan', $id_pesanan)
                 ->order_by('id_pesanan', 'DESC')
-                ->get('pesanan')->row();
+                ->get()->row();
 
         $pesanan->detail = $this->db->from('detail_pesanan')
                 ->join('produk', 'produk.id_produk=detail_pesanan.id_produk', 'left')

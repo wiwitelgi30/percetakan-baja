@@ -56,7 +56,22 @@
                     <td>
                         <form action="<?= base_url('/keranjang/tambah_catatan_produk') ?>" method="post">
                             <input type="hidden" name="id_keranjang" value="<?= $produk->id_keranjang ?>">
-                            <textarea onblur="this.form.submit()" name="catatan" id="catatan" rows="2" class="form-control" placeholder="Tambahkan catatan. cth: link desain dll"><?= $produk->catatan ?></textarea>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label for="catatan">Catatan :</label>
+                                </div>
+                                <div class="col-8">
+                                    <textarea onblur="this.form.submit()" name="catatan" id="catatan" rows="2" class="mb-2 form-control" placeholder="Tambahkan catatan. cth:  dll"><?= $produk->catatan ?></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-4">
+                                    <label for="link_design">Link Desain Produk :</label>
+                                </div>
+                                <div class="col-8">
+                                    <textarea onblur="this.form.submit()" name="link_design" id="link_design" row="2" class="form-control" placeholder="Tambahkan Link desain. cth: Link Google Drive dll"><?= $produk->link_design ?></textarea>
+                                </div>
+                            </div>
                         </form>
                     </td>
                 </tr>
